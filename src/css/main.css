@@ -1,0 +1,225 @@
+/* Colors */
+/* Global defaults */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+body {
+  white-space: pre-wrap;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #2B2F77 15%, #5d8565 135%) fixed;
+  background-size: 100% 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 5rem;
+  padding: 2rem;
+  z-index: 1;
+}
+.main-header__title {
+  color: #F1F192;
+  text-shadow: 0 0 8px rgba(241, 241, 146, 0.6) !important;
+}
+.main-header__nav {
+  position: relative;
+  width: 600px;
+  color: #f9d71c;
+}
+.main-header__nav__items {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.main-header__nav__item {
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.3s linear;
+}
+.main-header__nav__item--selected, .main-header__nav__item:hover {
+  border-bottom-color: #f9d71c;
+}
+.main-header__nav__menu-icon {
+  display: none !important;
+  color: #ffbd2e !important;
+  cursor: pointer !important;
+  user-select: none;
+}
+.main-header__menu-icon {
+  display: none !important;
+  color: #f9d71c !important;
+  cursor: pointer !important;
+  user-select: none;
+}
+@media (max-width: 960px) {
+  .main-header {
+    font-size: 1.125rem;
+  }
+  .main-header__nav {
+    color: #ffbd2e;
+  }
+  .main-header__nav__items {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(50vw);
+    background: rgba(47, 109, 176, 0.95);
+  }
+  .main-header__nav__item {
+    opacity: 0;
+  }
+  .main-header__nav__item--selected, .main-header__nav__item:hover {
+    border-bottom-color: #ffbd2e;
+  }
+  .main-header__nav__menu-icon {
+    display: block !important;
+  }
+  .main-header__menu-icon {
+    display: block !important;
+  }
+  .main-header.expanded .main-header__nav__items {
+    transform: none;
+    transition: all 0.75s ease-out;
+  }
+  .main-header.expanded .main-header__nav__item {
+    opacity: 1;
+    transition: opacity 0.6s linear;
+  }
+  .main-header.expanded .main-header__nav__item:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+  .main-header.expanded .main-header__nav__item:nth-child(3) {
+    transition-delay: 0.55s;
+  }
+  .main-header.expanded .main-header__nav__item:nth-child(4) {
+    transition-delay: 0.7s;
+  }
+  .main-header.expanded .main-header__nav__item:nth-child(5) {
+    transition-delay: 0.85s;
+  }
+  .main-header.expanded .main-header__nav__item:nth-child(6) {
+    transition-delay: 1s;
+  }
+  .main-header.expanded .main-header__menu-icon {
+    visibility: hidden;
+  }
+  .main-header.collapsed .main-header__nav__items {
+    transition: all 0.75s ease-out;
+  }
+  .main-header.collapsed .main-header__nav__item {
+    opacity: 0;
+    transition: opacity 0.4s linear;
+  }
+  .main-header.collapsed .main-header__menu-icon {
+    visibility: visible;
+  }
+}
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  position: relative;
+  width: 80%;
+  padding: 4rem 0;
+  margin: auto;
+}
+.schedule__header {
+  padding: 1rem 0;
+  color: white !important;
+}
+.schedule__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 14px;
+  background: rgba(47, 109, 176, 0.4);
+  box-shadow: 4px 4px 16px rgba(47, 109, 176, 0.65);
+}
+.schedule__card__title {
+  color: #F98F08 !important;
+  text-shadow: 0 0 8px rgba(255, 189, 46, 0.65) !important;
+}
+.schedule__card__timeslot {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.schedule__card__timeslot__event {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  color: white !important;
+  width: 100%;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+.schedule__card__timeslot__event__time {
+  width: 25%;
+  padding: 1rem 0;
+  text-wrap: none;
+}
+.schedule__card__timeslot__event__info {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  padding: 1rem;
+}
+.schedule__card__timeslot__line {
+  content: "";
+  width: 100%;
+  height: 1px;
+  border-bottom: 2px solid white;
+}
+@media (max-width: 600px) {
+  .schedule {
+    width: 85%;
+  }
+  .schedule__card__timeslot__event {
+    justify-content: space-around;
+    padding: 0;
+  }
+}
+
+/* Fede-in" appearing animation styles for when an element first appears */
+.appearing-element {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s linear;
+}
+.appearing-element.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*# sourceMappingURL=main.css.map */
