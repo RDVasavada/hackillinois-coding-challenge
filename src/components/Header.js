@@ -13,7 +13,7 @@ function Header() {
 
     React.useEffect(() => {
         const responsiveHandler = () => {
-            if (window.innerWidth > 600) {
+            if (window.innerWidth > 960) {
                 setExpanded(false)
                 setCollapsed(false)
             }
@@ -21,7 +21,6 @@ function Header() {
 
         window.addEventListener("resize", responsiveHandler)
 
-        // Return a function from the effect that removes the event listener
         return () => window.removeEventListener("resize", responsiveHandler)
     }, [])
 

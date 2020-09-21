@@ -38,7 +38,7 @@ function ScheduleCard(props) {
                             </div>
                         </div>
                         {index === timeslot.events.length - 1 &&
-                        <div className="schedule__card__timeslot__line" />
+                        <div className="schedule__card__timeslot__line"/>
                         }
                     </div>
                 )

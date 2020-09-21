@@ -38,7 +38,7 @@ const sortEvents = (events) => {
             })
         })
 
-        eventsArray.sort((a, b) => Date.parse(a.time) - Date.parse(b.time))
+        timeslotArray.sort((a, b) => a.time - b.time)
 
         eventsArray.push({
             date: key,
