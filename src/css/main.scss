@@ -243,13 +243,21 @@ ul {
         &__event {
           justify-content: space-around;
           padding: 0;
+
+          &__time {
+            width: 15%;
+          }
+
+          &__info {
+            width: 85%;
+          }
         }
       }
     }
   }
 }
 
-/* Fede-in" appearing animation styles for when an element first appears */
+/* Fade-in" appearing animation styles for when an element first appears */
 .appearing-element {
   opacity: 0;
   visibility: hidden;

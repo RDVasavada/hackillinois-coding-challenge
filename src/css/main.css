@@ -210,9 +210,15 @@ ul {
     justify-content: space-around;
     padding: 0;
   }
+  .schedule__card__timeslot__event__time {
+    width: 15%;
+  }
+  .schedule__card__timeslot__event__info {
+    width: 85%;
+  }
 }
 
-/* Fede-in" appearing animation styles for when an element first appears */
+/* Fade-in" appearing animation styles for when an element first appears */
 .appearing-element {
   opacity: 0;
   visibility: hidden;
